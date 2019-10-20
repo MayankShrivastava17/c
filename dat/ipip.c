@@ -14,7 +14,7 @@ struct {
     uint offset;
 } ipip;
 
-int destroy() {
+void destroy() {
     if (!ipip.offset) {
         return 0;
     }
@@ -22,7 +22,6 @@ int destroy() {
     free(ipip.index);
     free(ipip.data);
     ipip.offset = 0;
-    return 0;
 }
 
 int init(const char *ipdb) {
